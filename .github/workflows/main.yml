@@ -40,14 +40,13 @@ jobs:
   - name: Build Docker Image
     run: |
        docker build -f Dockerfile -t myapp:latest .
-       apt-get update && \
-       apt-get install --no-install-recommends -y \
-       dnsutils \
-       apt-cache policy dnsutils
-       libpq-dev=11.16-0+deb10u1 \
-       python3-dev=3.7.3-1 && \
-       apt-get clean && \
-       rm -rf /var/lib/apt/lists/*
+       sudo apt-get update && \
+       sudo apt-get install --no-install-recommends -y \
+         dnsutils \
+         libpq-dev \
+         python3-dev=3.7.3-1 && \
+       sudo apt-get clean && \
+       sudo rm -rf /var/lib/apt/lists/*
 
   - name: Docker Scout Scan
     run: |
