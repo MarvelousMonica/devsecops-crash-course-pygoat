@@ -38,14 +38,7 @@ jobs:
     uses: docker/setup-buildx-action@v3.10.0
    
   - name: Build Docker Image
-    run: |
-      docker build -f Dockerfile -t myapp:latest .
-      sudo apt-get update && \
-      sudo apt-get install --no-install-recommends -y \
-        libpq-dev \
-        python3-dev=3.7.3-1 && \
-      sudo apt-get clean && \
-      sudo rm -rf /var/lib/apt/lists/*
+    run: docker build -f Dockerfile -t myapp:latest .
 
   - name: Docker Scout Scan
     run: |
