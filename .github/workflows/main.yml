@@ -44,3 +44,12 @@ jobs:
       
     - name: Build Docker Image
       run: docker build -t myapp:latest .
+      
+    - name: Show default Docker daemon json content
+      run: |
+        if [-f /etc/docker/daemon.json }; then
+          sudo cat /etc/docker/daemon.json
+        else
+          echo "Daemon.json file does not exist."
+        fi
+      
