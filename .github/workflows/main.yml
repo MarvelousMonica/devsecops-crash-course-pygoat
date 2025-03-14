@@ -43,4 +43,4 @@ jobs:
         docker_version: latest
       
     - name: Build Docker Image
-      run: docker build -f Dockerfile -t myapp:latest .
+      run: docker build -t myapp:latest .
