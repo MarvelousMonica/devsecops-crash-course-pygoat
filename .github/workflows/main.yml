@@ -44,6 +44,6 @@ jobs:
       
     - name: Build Docker Image
       run: |
-        docker buildx build -f Dockerfile -t myapp:latest .
+        docker buildx build -f Dockerfile -t myapp:local .
       shell: bash
       
