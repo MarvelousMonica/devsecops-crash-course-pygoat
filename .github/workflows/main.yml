@@ -37,8 +37,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Docker
-      uses: docker-practice/actions-setup-docker@v1
+    - name: Docker Set up Docker
+      uses: docker/setup-docker-action@v4.3.0
       with:
         docker_version: 20.10
       
